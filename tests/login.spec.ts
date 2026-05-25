@@ -9,4 +9,4 @@ test('valid login test', async ({ page }) => {
   await loginPage.login('standard_user', 'secret_sauce');
 
   await expect(page).toHaveURL(/inventory/);
-})
+})hkjgit
