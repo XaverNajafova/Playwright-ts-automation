@@ -11,11 +11,8 @@ The framework supports:
 - Jenkins CI integration
 - Positive and negative test scenarios
 
----
+## 🧱 Framework Structure
 
-# 🧱 Framework Structure
-
-```text
 playwright-ts-framework/
 │
 ├── src/
@@ -35,22 +32,8 @@ playwright-ts-framework/
 │
 ├── playwright.config.ts
 └── README.md
-```
 
----
-
-# ✅ Test Scenarios
-
-### Positive Test
-- Valid login with correct credentials
-
-### Negative Tests
-- Invalid username/password
-- Empty login validation
-
----
-
-# ⚙️ Technologies Used
+## ⚙️ Technologies Used
 
 - Playwright
 - TypeScript
@@ -58,115 +41,64 @@ playwright-ts-framework/
 - Jenkins
 - GitHub
 
----
+## 🚀 Installation
 
-# 🚀 Installation
+npm install  
+npx playwright install  
 
-```bash
-npm install
-```
+## ▶️ Run Tests
 
-Install Playwright browsers:
+npx playwright test  
 
-```bash
-npx playwright install
-```
+npx playwright test --project=chromium  
 
----
+## 🌐 Cross Browser Testing
 
-# ▶️ Run Tests
-
-Run all tests:
-
-```bash
-npx playwright test
-```
-
-Run specific browser:
-
-```bash
-npx playwright test --project=chromium
-```
-
-Open HTML report:
-
-```bash
-npx playwright show-report
-```
-
----
-
-# 🌐 Cross Browser Testing
-
-Framework supports:
+Supports:
 - Chromium
 - Firefox
 - WebKit
 
----
-
-# 📊 Reporting
-
-HTML reporting is enabled using Playwright Reporter.
-
-Reports are generated automatically after test execution.
-
 ## 📊 Reporting
 
-This project uses:
+Playwright HTML Report:
+npx playwright show-report  
 
-- Playwright HTML Report
-- Allure Report (advanced reporting)
-
-### Run Allure report:
-
-npx playwright test
-npx allure generate allure-results -o allure-report
-npx allure open allure-report
-
----
+Allure Report:
+npx playwright test  
+npx allure generate allure-results -o allure-report  
+npx allure open allure-report  
 
 ## 🔧 CI/CD Integration
 
 This project is integrated with Jenkins.
 
-Jenkins pipeline performs:
-
-- GitHub code pull (via webhook trigger)
-- Dependency installation (npm install)
+Pipeline steps:
+- GitHub code pull (webhook trigger)
+- npm install
 - Playwright test execution
 - Automated CI runs on every push
 
----
+## 📁 Test Data Management
 
-# 📁 Test Data Management
-
-Test data is stored separately in JSON format for better maintainability and reusability.
+Test data is stored in JSON format for reusability.
 
 Example:
-
-```json
 {
   "validUser": {
     "username": "standard_user",
     "password": "secret_sauce"
   }
 }
-```
 
----
+## 🧠 Framework Design Pattern
 
-# 🧠 Framework Design Pattern
-
-This framework follows:
 - Page Object Model (POM)
-- Reusable BasePage methods
+- BasePage reusable methods
 - Modular test architecture
 
----
+## 👩‍💻 Author
 
-# 👩‍💻 Author
-
-Automation QA Portfolio Project
+QA Engineer (Manual & Automation) Portfolio Project
 
 Built with Playwright + TypeScript
