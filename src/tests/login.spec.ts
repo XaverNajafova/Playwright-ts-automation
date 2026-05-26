@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
+import data from '../utils/testData.json';
 
-test('valid login test', async ({ page }) => {
-  const loginPage = new LoginPage(page);
+test('valid login test @smoke', async ({ page }) => {
+  const login = new LoginPage(page);
 
-  await page.goto('https://www.saucedemo.com/');
-
-  await loginPage.login('standard_user', 'secret_sauce');
+  await login.open('/');
+  await login.login(data.validUser.username, data.validUser.password);
 
   await expect(page).toHaveURL(/inventory/);
-})
+});

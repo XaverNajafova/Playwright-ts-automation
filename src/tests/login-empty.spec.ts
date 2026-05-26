@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 
-test('empty login test', async ({ page }) => {
+test('empty login test @regression', async ({ page }) => {
   const login = new LoginPage(page);
 
   await login.open('/');

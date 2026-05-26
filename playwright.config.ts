@@ -11,26 +11,31 @@ export default defineConfig({
 
   workers: process.env.CI ? 1 : undefined,
 
-  reporter: [
-    ['html', { outputFolder: 'playwright-report', open: 'never' }]
-  ],
+  // 📊 REPORTERS (HTML + ALLURE)
+ reporter: [
+  ['html'],
+  ['allure-playwright']
+],
 
+  // 🌐 GLOBAL SETTINGS
   use: {
     baseURL: 'https://www.saucedemo.com/',
     trace: 'on-first-retry',
   },
 
+  // 🏷️ TAG FILTER
+  grep: process.env.GREP,
+
+  // 🌍 BROWSERS
   projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
-
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },

@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import data from '../utils/testData.json';
 
-test('invalid login test', async ({ page }) => {
+test('invalid login test @regression', async ({ page }) => {
   const login = new LoginPage(page);
 
   await login.open('/');

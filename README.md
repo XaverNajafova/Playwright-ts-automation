@@ -111,17 +111,31 @@ HTML reporting is enabled using Playwright Reporter.
 
 Reports are generated automatically after test execution.
 
+## 📊 Reporting
+
+This project uses:
+
+- Playwright HTML Report
+- Allure Report (advanced reporting)
+
+### Run Allure report:
+
+npx playwright test
+npx allure generate allure-results -o allure-report
+npx allure open allure-report
+
 ---
 
-# 🔧 CI/CD Integration
+## 🔧 CI/CD Integration
 
 This project is integrated with Jenkins.
 
 Jenkins pipeline performs:
-- GitHub code pull
-- Dependency installation
+
+- GitHub code pull (via webhook trigger)
+- Dependency installation (npm install)
 - Playwright test execution
-- Automated CI execution
+- Automated CI runs on every push
 
 ---
 
