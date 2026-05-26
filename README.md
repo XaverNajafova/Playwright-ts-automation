@@ -4,6 +4,10 @@
 
 This project is a UI automation framework built with Playwright and TypeScript using Page Object Model (POM) design pattern.
 
+![Playwright](https://img.shields.io/badge/Playwright-TypeScript-green)
+![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-red)
+![Status](https://img.shields.io/badge/Tests-Passing-brightgreen)
+
 The framework supports:
 - Cross-browser testing
 - Reusable page objects
@@ -13,6 +17,7 @@ The framework supports:
 
 ## 🧱 Framework Structure
 
+```text
 playwright-ts-framework/
 │
 ├── src/
@@ -30,8 +35,15 @@ playwright-ts-framework/
 │   └── utils/
 │       └── testData.json
 │
+├── screenshots/
+│   ├── allure-report.png
+│   └── jenkins-success.png
+│
 ├── playwright.config.ts
+├── package.json
+├── tsconfig.json
 └── README.md
+```
 
 ## ⚙️ Technologies Used
 
@@ -48,9 +60,10 @@ npx playwright install
 
 ## ▶️ Run Tests
 
-npx playwright test  
-
-npx playwright test --project=chromium  
+```bash
+npm install
+npx playwright install
+```
 
 ## 🌐 Cross Browser Testing
 
@@ -65,9 +78,14 @@ Playwright HTML Report:
 npx playwright show-report  
 
 Allure Report:
-npx playwright test  
-npx allure generate allure-results -o allure-report  
-npx allure open allure-report  
+```bash
+allure generate ./allure-results --clean
+allure open
+``` 
+
+### Allure Report Overview
+
+<img src="screenshots/allure-report.png" width="900"/>
 
 ## 🔧 CI/CD Integration
 
@@ -78,6 +96,10 @@ Pipeline steps:
 - npm install
 - Playwright test execution
 - Automated CI runs on every push
+
+### Jenkins Pipeline
+
+<img src="screenshots/jenkins-success.png" width="900"/>
 
 ## 📁 Test Data Management
 
