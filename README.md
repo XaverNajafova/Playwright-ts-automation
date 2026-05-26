@@ -3,6 +3,22 @@
 ## 📌 Project Overview
 
 This project is a UI automation framework built with Playwright and TypeScript using Page Object Model (POM) design pattern.
+This project demonstrates real-world CI/CD integrated automation framework used for regression execution
+
+## 🧠 Framework Architecture
+
+- BasePage contains reusable common actions
+- Page classes encapsulate UI elements and actions
+- Test layer focuses only on test logic
+- Utilities handle test data and helpers
+
+## 🎯 Why this architecture?
+
+This structure was chosen to:
+- Reduce code duplication
+- Improve test maintainability
+- Support scalable test growth
+- Enable easy CI/CD integration
 
 ![Playwright](https://img.shields.io/badge/Playwright-TypeScript-green)
 ![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-red)
@@ -61,8 +77,7 @@ npx playwright install
 ## ▶️ Run Tests
 
 ```bash
-npm install
-npx playwright install
+npx playwright test
 ```
 
 ## 🌐 Cross Browser Testing
@@ -105,7 +120,8 @@ Pipeline steps:
 
 Test data is stored in JSON format for reusability.
 
-Example:
+### Example:
+```json
 {
   "validUser": {
     "username": "standard_user",
@@ -113,11 +129,6 @@ Example:
   }
 }
 
-## 🧠 Framework Design Pattern
-
-- Page Object Model (POM)
-- BasePage reusable methods
-- Modular test architecture
 
 ## 👩‍💻 Author
 
